@@ -1,0 +1,17 @@
+{
+    "contents" : "mergeOneFile <- function (srcFile1, srcFile2, target) {\n    # Lines for debugging...\n    # print(paste(\"Merging files\", srcFile1, \"and\", srcFile2, \"to\", target))\n    # print(paste(srcFile1, file.exists(srcFile1)))\n    # print(paste(srcFile2, file.exists(srcFile2)))\n    \n    df1 <- read.table(srcFile1)\n    df2 <- read.table(srcFile2)\n    # Test first development, get it?  No seriously, test data first, train\n    # data on the bottom\n    merged <- rbind(df1, df2)\n    write.table(merged, target)\n    \n}\n\ngetMergeDir <- function(dirRoot) {\n    paste(dirRoot, \"/merged\", sep=\"\")\n}\n\ngetMergeDirInertial <- function(dirRoot) {\n    paste(dirRoot, \"/merged/Inertial Signals\", sep = \"\")\n}\n\nmergeFiles <- function(directory) {\n    # Hard coded lists of file roots we need to operate on.\n    # Todo this could be made generic, but this implementation was easier\n    # in the short term\n    filesRoot <- c(\"subject\", \"X\", \"y\")\n    filesInertialSignals <- c(\n        \"body_acc_x\",  \"body_acc_y\",  \"body_acc_z\", \n        \"body_gyro_x\", \"body_gyro_y\", \"body_gyro_z\",\n        \"total_acc_x\", \"total_acc_y\", \"total_acc_z\")\n\n    # Create target directory\n    mergeDir <- paste(directory, \"/merged\", sep=\"\")\n    if(! file.exists(mergeDir)) {\n        dir.create(mergeDir)\n    }\n    \n    mergeDirInertial <- paste(mergeDir, \"/Inertial Signals\", sep=\"\")\n    if(! file.exists(mergeDirInertial)) {\n        dir.create(mergeDirInertial)\n    }\n    \n    \n    for(f in filesRoot) {\n        f1 <- paste(directory, \"/test/\", f, \"_test.txt\", sep=\"\")\n        f2 <- paste(directory, \"/train/\", f, \"_train.txt\", sep=\"\")\n        merged <- paste(mergeDir, \"/\", f, \"_merged.txt\", sep=\"\")\n        mergeOneFile(f1, f2, merged)\n    }\n\n    for(f in filesInertialSignals) {\n        f1 <- paste(directory, \"/test/Inertial Signals/\", f, \"_test.txt\", sep=\"\")\n        f2 <- paste(directory, \"/train/Inertial Signals/\", f, \"_train.txt\", sep=\"\")\n        merged <- paste(mergeDirInertial, \"/\", f, \"_merged.txt\", sep=\"\")\n        mergeOneFile(f1, f2, merged)\n    }\n    \n}\n\nrun_analysis <- function() {\n    \n}",
+    "created" : 1431730635024.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1479845746",
+    "id" : "2987E502",
+    "lastKnownWriteTime" : 1431796848,
+    "path" : "~/Dropbox/science/coursera/getting_cleaning_data/course_project/run_analysis.R",
+    "project_path" : "run_analysis.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}
