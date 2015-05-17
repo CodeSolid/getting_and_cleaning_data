@@ -48,5 +48,8 @@ directory.
 
 With these files, we're able to run the analysis in step two of the assignment with the function "makeAnalyzedDataFrame".  This step creates an intermediate
 data frame containing the subject, the activity, and the mean and stddev calculation for each file in the "Inertial Signals directory".  We save this intermediate data frame 
-with to the file "intermediateDataTable.txt".
+with to the file "intermediateDataTable.txt".  From this dataframe we do additional analysis, grouping the results by Subject and activity, so that we have a mean for each value 
+for each subject and activity.  Since not every subect has data for every activity, and since we are summarizing again, this results in a much smaller number of rows compared to the original data set, but we cross checked the result by running a more simple count grouped the same way.  We store this result as analyzed.txt.  The codebook for this file is in the file [Analyzed_txt.md](Analyzed_txt.md)
 ## The results
+
+The Code
