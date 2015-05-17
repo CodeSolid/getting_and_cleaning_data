@@ -171,7 +171,7 @@ writeIntermediateDataFrame <- function(df) {
 
 readIntermediateDataFrame <- function() {
     file <- getIntermediateDataFrameFilename()
-    read.table(df)
+    read.table(file, header=T)
 }
 
 run_analysis <- function() {
