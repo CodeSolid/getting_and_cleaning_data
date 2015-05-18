@@ -34,7 +34,7 @@ concommittant benefit in what was learned, so it is left as a possible future en
 
 ## The analysis
 
-The run_analysis.R file is in this repository.  Note that we used the boicLite "genefilter" 
+The run_analysis.R file is in this repository.  Note that we used the biocLite "genefilter" 
 library, so in order to run run_analysis.R successfully, you'll likely need to install this first, as follows:
 
 <pre>
