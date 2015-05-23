@@ -174,6 +174,20 @@ readIntermediateDataFrame <- function() {
     read.table(file, header=T)
 }
 
+get_feature_names <- function(directory) {
+    file <- paste(directory, "/features.txt", sep="")
+    df <- read.table(file, col.names=c('index', 'name'))    
+    lnames <- as.vector(df$name)
+    lnames
+}
+
+get_features <- function(directory) {
+    names <- get_feature_names(directory)
+    featuresFile <- paste(getMergeDir(directory), "/X_merged.txt", sep="")
+    features <- read.table(featuresFile, header=T, skip=0, col.names = names)
+    #names(features) <- names
+    features
+}
 run_analysis <- function() {
     library(genefilter)
     directory <- "UCI_HAR_Dataset"
