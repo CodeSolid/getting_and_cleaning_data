@@ -27,10 +27,10 @@ You should create one R script called run_analysis.R that does the following.
 Note that we focused our analysis primarily on the files in the "Inertial Signals" directory
 of the test and training data sets.  We excluded the "features" data (see features_info.txt, 
 X_test.txt and X_train.txt.  One reason was to focus our analysis on the original
-source data, rather than re-analyzing data that was already processed.  A second reason was 
-to time-box our effort to something like the nine-hour weekly maximum suggested for the course.
-Including the features data would have significantly added to the time scope without a 
-concommittant benefit in what was learned, so it is left as a possible future enhancement.
+source data, rather than re-analyzing data that was already processed.  Also, although 
+it made sense to take the "mean and standard deviation for each measurement" (Step 2) as
+a row average, for features, each row represented a variety of different calculations, 
+so taking a row average made no sense in this context.
 
 ## The analysis
 
