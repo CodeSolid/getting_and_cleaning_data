@@ -71,4 +71,5 @@ simple count grouped the same way.  We store this result as analyzed.txt.
 The codebook for the final result file (analzyzed.txt) is in the file, 
 [Analyzed_txt.md](Analyzed_txt.md).  Other files that are available 
 for review are the file containing the intermediate steps (intermediateDataTable.txt)
-and the mergeable features file (features_with_subjects_and_activities.txt).
+and the mergeable features file (features_with_subjects_and_activities.txt).  
+The output files are in the root directory along with the code files for the project.
